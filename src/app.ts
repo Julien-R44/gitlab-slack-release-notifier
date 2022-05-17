@@ -11,10 +11,8 @@ async function webhookHandler(request: FastifyRequest, reply: FastifyReply) {
   /**
    * Validate the request
    */
-  console.log('hey !')
   const hasGitlabSecret = !!Config.gitlabSecretToken
   if (hasGitlabSecret && request.headers['x-gitlab-token'] !== Config.gitlabSecretToken) {
-    console.log('invalid !')
     reply.code(401).send()
     return
   }
@@ -27,16 +25,12 @@ async function webhookHandler(request: FastifyRequest, reply: FastifyReply) {
     funkyEmoji: Config.withFunkyEmojis,
   })
 
-  console.log('builded', Config.slackWebhook)
-
   /**
    * Send the message to the Slack webhook
    */
   await fetch(Config.slackWebhook, {
     body: JSON.stringify(result),
     method: 'POST',
-  }).catch((err) => {
-    console.log({ err })
   })
 
   reply.status(200).send()
