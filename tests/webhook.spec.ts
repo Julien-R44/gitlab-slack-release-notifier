@@ -1,8 +1,11 @@
 import { test } from '@japa/runner'
+import { setGlobalDispatcher } from 'undici'
 import build from '../src/app'
 import { Config } from '../src/Config'
 import { eventRelease } from './fixtures'
-import nock from 'nock'
+import SlackMock from './helpers/slack-mock-agent'
+
+setGlobalDispatcher(SlackMock.agent)
 
 test.group('Webhook', (group) => {
   group.each.setup(() => {
@@ -33,19 +36,8 @@ test.group('Webhook', (group) => {
   test('Should work when no secret token is provided', async ({ assert }) => {
     const app = build()
 
-    const mock = nock('https://test.com')
-      .post('/')
-      .reply(200, (baba) => {
-        console.log({ baba })
-        console.log('hey !')
-
-        return {
-          hello: 'world',
-        }
-      })
-
     // @ts-ignore
-    Config.slackWebhook = 'https://test.com'
+    Config.slackWebhook = 'https://slack-api.com'
 
     const response = await app.inject({
       method: 'POST',
@@ -57,5 +49,5 @@ test.group('Webhook', (group) => {
     })
 
     assert.deepEqual(response.statusCode, 200)
-  }).pin()
+  })
 })
