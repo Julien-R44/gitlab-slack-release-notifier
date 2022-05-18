@@ -1,6 +1,6 @@
 {
   "name": "gitlab-slack-release-notifier",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "🤖 A small service that sends a notification on Slack when a release has been published on Gitlab.",
   "keywords": [
     "gitlab",
