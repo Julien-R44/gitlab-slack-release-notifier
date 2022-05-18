@@ -1,11 +1,10 @@
-<div align="center>
-  <img src="https://i.imgur.com/rZtYZ0t.png" alt="" />
-  <h2>
-    Gitlab Slack Release Notifier
-  </h2>
+<div align="center">
+  <img src="https://i.imgur.com/rZtYZ0t.png" alt="" width="300px"/>
+  <h2>Gitlab Slack Release Notifier</h2>
+  <p>🤖 A small service that sends a notification on Slack when a release has been published on Gitlab.</p>
 </div>
-
-🤖 A small service that sends a notification on Slack when a release has been published on Gitlab.
+<br/>
+<hr/>
 
 ## Installation
 
