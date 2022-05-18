@@ -49,7 +49,7 @@ test.group('Block builder | Release Event', (group) => {
   })
 
   test('Should have context with author and date', ({ assert }) => {
-    let result = builder.buildReleaseEventMessage(eventRelease, {})
+    const result = builder.buildReleaseEventMessage(eventRelease, {})
 
     assert.deepEqual(result.blocks![3], {
       type: 'context',
@@ -67,7 +67,7 @@ test.group('Block builder | Release Event', (group) => {
   })
 
   test('Should have correct description', ({ assert }) => {
-    let result = builder.buildReleaseEventMessage(eventRelease, {})
+    const result = builder.buildReleaseEventMessage(eventRelease, {})
 
     assert.deepEqual(result.blocks![2], {
       type: 'section',
@@ -79,7 +79,7 @@ test.group('Block builder | Release Event', (group) => {
   })
 
   test('With custom header content', ({ assert }) => {
-    let result = builder.buildReleaseEventMessage(eventRelease, {
+    const result = builder.buildReleaseEventMessage(eventRelease, {
       headerFormatter: (event) => `My header ${event.name}`,
     })
 
@@ -93,12 +93,12 @@ test.group('Block builder | Release Event', (group) => {
   })
 
   test('With funky emoji enabled', ({ assert }) => {
-    let result = builder.buildReleaseEventMessage(eventRelease, {
+    const result = builder.buildReleaseEventMessage(eventRelease, {
       funkyEmoji: true,
     })
 
     const hasEmojiRegex = /\p{Emoji}/u
-    // @ts-ignore
+    // @ts-expect-error private property
     assert.isTrue(hasEmojiRegex.test(result.blocks![0].text.text))
   })
 })

@@ -1,8 +1,8 @@
-import { FastifyReply, FastifyRequest, FastifyServerOptions } from 'fastify'
-import { BlockKitBuilder } from './BlockKitBuilder'
-import { Config } from './Config'
 import Fastify from 'fastify'
+import type { FastifyReply, FastifyRequest, FastifyServerOptions } from 'fastify'
 import { fetch } from 'undici'
+import { BlockKitBuilder } from './BlockKitBuilder/index'
+import { Config } from './Config/index'
 
 /**
  * Main webhook handler

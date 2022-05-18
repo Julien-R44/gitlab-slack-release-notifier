@@ -1,5 +1,5 @@
-import { ReleaseEvent } from '../Contracts/gitlab'
-import { Blocks, Message, Elements } from 'slack-block-builder'
+import { Blocks, Elements, Message } from 'slack-block-builder'
+import type { ReleaseEvent } from '../Contracts/gitlab'
 import { funkyEmojis } from './funky-emojis'
 
 /**
@@ -55,7 +55,7 @@ export class BlockKitBuilder {
     }
   ) {
     const { funkyEmoji, headerFormatter } = options || {}
-    let headerContent = this.formatHeader(releaseEvent, funkyEmoji || false, headerFormatter)
+    const headerContent = this.formatHeader(releaseEvent, funkyEmoji || false, headerFormatter)
 
     return Message()
       .blocks(

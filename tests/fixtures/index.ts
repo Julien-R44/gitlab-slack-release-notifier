@@ -1,4 +1,4 @@
-import { ReleaseEvent } from '../../src/Contracts/gitlab'
+import type { ReleaseEvent } from '../../src/Contracts/gitlab'
 
 export const eventRelease = {
   description:

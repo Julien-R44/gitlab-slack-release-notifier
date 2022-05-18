@@ -17,5 +17,5 @@ server.listen(Config.port, Config.address, (err, _address) => {
   }
 
   server.log.error(err)
-  process.exit(1)
+  throw err
 })

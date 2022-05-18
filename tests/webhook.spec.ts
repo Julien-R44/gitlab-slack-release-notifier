@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { test } from '@japa/runner'
 import { setGlobalDispatcher } from 'undici'
 import build from '../src/app'
@@ -9,17 +10,17 @@ setGlobalDispatcher(SlackMock.agent)
 
 test.group('Webhook', (group) => {
   group.each.setup(() => {
-    // @ts-ignore
+    // @ts-expect-error
     Config.slackWebhook = null
 
-    // @ts-ignore
+    // @ts-expect-error
     Config.gitlabSecretToken = null
   })
 
   test('Should decline when secret token is invalid', async ({ assert }) => {
     const app = build()
 
-    // @ts-ignore
+    // @ts-expect-error
     Config.gitlabSecretToken = 'secret'
 
     const response = await app.inject({
@@ -36,7 +37,7 @@ test.group('Webhook', (group) => {
   test('Should work when no secret token is provided', async ({ assert }) => {
     const app = build()
 
-    // @ts-ignore
+    // @ts-expect-error
     Config.slackWebhook = 'https://slack-api.com'
 
     const response = await app.inject({
