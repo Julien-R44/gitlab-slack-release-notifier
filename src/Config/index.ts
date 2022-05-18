@@ -13,4 +13,14 @@ export class Config {
    * Should funky emojis be used in the header
    */
   public static readonly withFunkyEmojis = process.env.WITH_FUNKY_EMOJIS === 'true'
+
+  /**
+   * Server listening port
+   */
+  public static readonly port = process.env.PORT || 3000
+
+  /**
+   * Server address
+   */
+  public static readonly address = process.env.ADDRESS || '127.0.0.1'
 }

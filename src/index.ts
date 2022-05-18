@@ -1,4 +1,5 @@
 import buildServer from './app'
+import { Config } from './Config'
 
 /**
  * Start the server and listen on port 3000
@@ -10,7 +11,7 @@ const server = buildServer({
   },
 })
 
-server.listen(3000, (err, _address) => {
+server.listen(Config.port, Config.address, (err, _address) => {
   if (!err) {
     return
   }
