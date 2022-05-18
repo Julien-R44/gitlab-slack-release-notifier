@@ -35,6 +35,15 @@ module.exports = {
 
 Soon !
 
+
+### Connect to your GitLab project
+
+Once your service is launched with the correct url of your Slack webhook, the only thing left is to add a webhook on your GitLab project in Settings > Webhooks.
+
+So create a new webook, with the url of the service and check the "Releases event" box. Once registered, you can test it directly from GitLab and if you have configured everything properly, you should receive a notification on your Slack channel. 🚀
+
+
+
 ### Configuration
 
 Here are the environment variables you can modify:
