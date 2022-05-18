@@ -1,37 +1,27 @@
 {
-  "name": "starter-ts",
+  "name": "gitlab-slack-release-notifier",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "homepage": "https://github.com/Julien-R44/[name]#readme",
+  "description": "🤖 A small service that sends a notification on Slack when a release has been published on Gitlab.",
+  "keywords": [
+    "gitlab",
+    "slack",
+    "notification",
+    "release"
+  ],
+  "homepage": "https://github.com/Julien-R44/gitlab-slack-release-notifier#readme",
   "bugs": {
-    "url": "https://github.com/Julien-R44/[name]/issues"
+    "url": "https://github.com/Julien-R44/gitlab-slack-release-notifier/issues"
   },
   "packageManager": "pnpm@7.0.1",
   "license": "MIT",
   "author": "Julien Ripouteau <julien@ripouteau.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Julien-R44/[name].git"
+    "url": "git+https://github.com/Julien-R44/gitlab-slack-release-notifier.git"
   },
   "funding": "https://github.com/sponsors/Julien-R44",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
+  "bin": {
+    "gitlab-slack-release-notifier": "./dist/index.cjs"
   },
   "files": [
     "dist"
