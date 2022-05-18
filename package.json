@@ -95,7 +95,6 @@
   },
   "dependencies": {
     "fastify": "^3.29.0",
-    "node-fetch": "^3.2.4",
     "slack-block-builder": "^2.5.0",
     "undici": "^5.2.0"
   }
