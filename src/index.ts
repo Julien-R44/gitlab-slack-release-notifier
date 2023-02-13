@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import buildServer from './app'
 import { Config } from './Config'
 
