@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+      target: production
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - GITLAB_SECRET_TOKEN=1234 # Secret token to validate received Gitlab payloads
+      - SLACK_WEBHOOK=https://slack-webhook # The URL of the Slack Webhook to send the message to
+      - WITH_FUNKY_EMOJIS=true # If set to true, the bot will display a random emoji next to the notification header in Slack. ( default: false )
+      - PORT=3000 # The port to listen on. ( default: 3000 )
+      - ADDRESS=0.0.0.0 # The address to listen on. ( default: localhost )
